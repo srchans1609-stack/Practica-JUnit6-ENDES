@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
+ *ander
  * Clase de pruebas para asegurar la precisión de las conversiones de temperatura.
  */
 public class ConversorTemperaturaTest {
