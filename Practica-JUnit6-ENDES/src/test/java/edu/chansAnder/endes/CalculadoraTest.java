@@ -19,7 +19,9 @@ class CalculadoraTest {
     /**
      * Prueba los métodos de suma, resta, multiplicación y división en condiciones normales.
      * Este test asegura que los cálculos básicos devuelven los valores esperados.
+     * Utilizo assertEquals para que me verifique si esta bien el resultado
      */
+    //Pongo 10 para ver si funciona el assertEquals pero si ponemos algo diferente ha eso nos saltara un error
     @Test
     void testCompleto() {
         // Verificación de las cuatro operaciones básicas

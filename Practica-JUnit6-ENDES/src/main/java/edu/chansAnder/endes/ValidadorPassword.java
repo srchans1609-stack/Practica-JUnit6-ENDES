@@ -17,8 +17,9 @@ public class ValidadorPassword {
         return password.matches("^(?=.*[0-9])(?=.*[A-Z]).{8,}$");
         /**
          * Pongo esto: (?=.*[0-9]) paraque se utilice los numeros de 0 al 9
-         * (?=.*[A-Z]) esto para que pongamos letras desde la a hasta la z
-         * {8,}$") esto para que sean como máximo 8 caracteres
+         * (?=.*[A-Z]) esto para que pongamos letras desde la a hasta la z en mayúscula
+         * {8,}$") esto para que sean como mínimo 8 caracteres
+         * y no podemos poner solo letras ni solo números
          */
     }
 }

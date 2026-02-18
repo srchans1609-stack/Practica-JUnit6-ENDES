@@ -20,6 +20,8 @@ public class ConversorTemperaturaTest {
     /**
      * Verifica la conversión de Celsius a Fahrenheit.
      * Comprueba el punto de congelación y un valor positivo estándar.
+     * Igual que en la calculadora lo utilizamos para ver si está bien el resultado
+     * En este caso me obliga la función a poner un delta que se utliza para marcar el error que me puedo permitir
      */
     @Test
     public void testCelsiusAFahrenheit() {
