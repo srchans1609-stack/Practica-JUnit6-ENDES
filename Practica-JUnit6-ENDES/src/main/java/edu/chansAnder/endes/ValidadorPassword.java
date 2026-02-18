@@ -13,7 +13,12 @@ public class ValidadorPassword {
      */
     public boolean esSegura(String password) {
         if (password == null) return false;
-        // Expresión regular recomendada [cite: 58]
+        // Voy a utilizar la fórmula de abajo para asegurar y obligarr al usuario a poner esos caracteres
         return password.matches("^(?=.*[0-9])(?=.*[A-Z]).{8,}$");
+        /**
+         * Pongo esto: (?=.*[0-9]) paraque se utilice los numeros de 0 al 9
+         * (?=.*[A-Z]) esto para que pongamos letras desde la a hasta la z
+         * {8,}$") esto para que sean como máximo 8 caracteres
+         */
     }
 }

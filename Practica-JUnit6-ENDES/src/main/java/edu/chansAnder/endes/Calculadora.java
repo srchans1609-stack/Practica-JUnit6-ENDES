@@ -47,7 +47,7 @@ public class Calculadora {
      */
     public double dividir(double a, double b) {
         if (b == 0) {
-            throw new IllegalArgumentException("No se puede dividir por cero");
+            throw new IllegalArgumentException("Utilizo el throw new porque el println con error seguiria utlizando el programa incluso estando mal");
         }
         return a / b;
     }

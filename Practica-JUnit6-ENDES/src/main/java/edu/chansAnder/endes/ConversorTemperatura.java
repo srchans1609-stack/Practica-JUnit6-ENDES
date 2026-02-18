@@ -9,6 +9,7 @@ public class ConversorTemperatura {
      * Convierte grados Celsius a Fahrenheit.
      * @param celsius Grados en escala Celsius.
      * @return Grados equivalentes en Fahrenheit.
+     * simplemente utilizo la formula de conversión de celsius a fahrenheit
      */
     public double celsiusAFahrenheit(double celsius) {
         return (celsius * 9 / 5) + 32;
