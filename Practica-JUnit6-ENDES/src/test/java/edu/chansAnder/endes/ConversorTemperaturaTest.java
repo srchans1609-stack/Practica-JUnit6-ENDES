@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Clase de pruebas unitarias para la clase ConversorTemperatura.
  * Verifica que las conversiones entre grados Celsius y Fahrenheit se realicen correctamente
- * utilizando las fórmulas habituales según los requisitos del proyecto.
+ * Utilizando las fórmulas habituales según los requisitos del proyecto.
  * * @author Ander Chans
  * @version 1.0
  */

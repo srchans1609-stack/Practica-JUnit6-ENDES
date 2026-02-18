@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Clase de pruebas unitarias para la clase ValidadorPassword.
  * Verifica el cumplimiento de las reglas de seguridad: longitud mínima,
- * presencia de mayúsculas, números y control de nulos.
+ * Presencia de mayúsculas, números y control de nulos.
  * * @author Ander Chans
  * @version 1.0
  */
