@@ -3,25 +3,42 @@ package edu.chansAnder.endes;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase de pruebas unitarias para verificar el comportamiento de la clase Calculadora.
+ * Se comprueban tanto el funcionamiento en condiciones normales como el control de errores.
+ * * @author Ander Chans
+ * @version 1.0
+ */
 class CalculadoraTest {
 
+    /**
+     * Instancia de la calculadora para realizar las pruebas.
+     */
     private final Calculadora calc = new Calculadora();
 
+    /**
+     * Prueba los métodos de suma, resta, multiplicación y división en condiciones normales.
+     * Este test asegura que los cálculos básicos devuelven los valores esperados.
+     */
     @Test
     void testCompleto() {
-        // 1. Esto sube el % de MÉTODOS: Tienes que llamar a los 4 métodos
-        assertEquals(10.0, calc.sumar(5, 5));      // Prueba sumar
-        assertEquals(5.0, calc.restar(10, 5));     // Prueba restar
-        assertEquals(20.0, calc.multiplicar(4, 5)); // Prueba multiplicar
-        assertEquals(2.0, calc.dividir(10, 5));    // Prueba dividir (caso normal)
+        // Verificación de las cuatro operaciones básicas
+        assertEquals(10.0, calc.sumar(5, 5), "La suma de 5 + 5 debería ser 10");
+        assertEquals(5.0, calc.restar(10, 5), "La resta de 10 - 5 debería ser 5");
+        assertEquals(20.0, calc.multiplicar(4, 5), "La multiplicación de 4 * 5 debería ser 20");
+        assertEquals(2.0, calc.dividir(10, 5), "La división de 10 / 5 debería ser 2");
     }
 
+    /**
+     * Verifica que la calculadora lance una excepción cuando se intenta dividir por cero.
+     * Cumple con el requisito obligatorio de control de errores mediante IllegalArgumentException.
+     * * @see IllegalArgumentException
+     */
     @Test
     void testExcepcion() {
-        // 2. Esto sube el % de LÍNEAS: Tienes que forzar el error de la línea 49-51
-        // Es obligatorio según las instrucciones
+        // Verificación del caso de error obligatorio
         assertThrows(IllegalArgumentException.class, () -> {
             calc.dividir(10, 0);
-        });
+        }, "Debería lanzar IllegalArgumentException al dividir por cero");
     }
 }
