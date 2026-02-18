@@ -1,4 +1,4 @@
-package edu.chans.endes;
+package edu.chansAnder.endes;
 
 /**
  * Clase para realizar conversiones entre escalas de temperatura Celsius y Fahrenheit[cite: 60].

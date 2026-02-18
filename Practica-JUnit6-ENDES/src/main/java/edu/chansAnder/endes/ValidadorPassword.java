@@ -1,4 +1,4 @@
-package edu.chans.endes;
+package edu.chansAnder.endes;
 
 /**
  * Clase para validar la seguridad de contraseñas basándose en criterios específicos.

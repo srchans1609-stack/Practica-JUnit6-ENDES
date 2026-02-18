@@ -1,4 +1,4 @@
-package edu.chans.endes;
+package edu.chansAnder.endes;
 
 /**
  * Clase que proporciona operaciones matemáticas básicas como suma, resta,
