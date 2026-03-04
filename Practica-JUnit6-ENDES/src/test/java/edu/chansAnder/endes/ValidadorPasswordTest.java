@@ -1,61 +1,34 @@
 package edu.chansAnder.endes;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 /**
- * Clase de pruebas unitarias para la clase ValidadorPassword.
- * Verifica el cumplimiento de las reglas de seguridad: longitud mínima,
- * Presencia de mayúsculas, números y control de nulos.
- * * @author Ander Chans
- * @version 1.0
+ * Pruebas unitarias para validar la lógica de contraseñas y asegurar cobertura total.
  */
 public class ValidadorPasswordTest {
 
-    /**
-     * Instancia del validador para realizar las pruebas.
-     */
     private final ValidadorPassword validador = new ValidadorPassword();
 
     /**
-     * Verifica que una contraseña que cumple todos los requisitos sea aceptada.
-     * Requisitos: 8+ caracteres, al menos una mayúscula y un número.
+     * Test para casos donde la contraseña debe ser aceptada.
      */
     @Test
     public void testPasswordSegura() {
-        assertTrue(validador.esSegura("Abc12345"), "Debería ser true: cumple todos los requisitos");
+        assertTrue(validador.esSegura("Ander12345"), "Debería ser válida");
     }
 
     /**
-     * Verifica que se rechacen contraseñas que no alcanzan la longitud mínima.
+     * Test para casos de fallo. Cubre nulos, vacíos, cortos y falta de caracteres obligatorios.
+     * Esto llevará la barra de cobertura al 100%.
      */
     @Test
-    public void testPasswordCorta() {
-        assertFalse(validador.esSegura("Ab1"), "Debería ser false: longitud inferior a 8 caracteres");
-    }
-
-    /**
-     * Verifica que una contraseña sin letras mayúsculas sea rechazada.
-     */
-    @Test
-    public void testPasswordSinMayuscula() {
-        assertFalse(validador.esSegura("abc12345"), "Debería ser false: no contiene mayúsculas");
-    }
-
-    /**
-     * Verifica que una contraseña sin números sea rechazada.
-     */
-    @Test
-    public void testPasswordSinNumero() {
-        assertFalse(validador.esSegura("SoloLetras"), "Debería ser false: no contiene números");
-    }
-
-    /**
-     * Verifica el comportamiento ante un valor nulo.
-     * Caso de prueba obligatorio según las especificaciones.
-     */
-    @Test
-    public void testPasswordNula() {
-        assertFalse(validador.esSegura(null), "Debería ser false: el valor proporcionado es nulo");
+    public void testPasswordInsegura() {
+        assertFalse(validador.esSegura(null), "Fallo esperado: Nulo");
+        assertFalse(validador.esSegura("   "), "Fallo esperado: Espacios en blanco");
+        assertFalse(validador.esSegura("Short1"), "Fallo esperado: Menos de 8 caracteres");
+        assertFalse(validador.esSegura("todominusculas1"), "Fallo esperado: Sin mayúsculas");
+        assertFalse(validador.esSegura("SINNUMEROS"), "Fallo esperado: Sin números");
+        assertFalse(validador.esSegura("Pass Word1"), "Fallo esperado: Contiene espacios");
     }
 }

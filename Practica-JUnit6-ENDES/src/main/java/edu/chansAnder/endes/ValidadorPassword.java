@@ -1,26 +1,43 @@
 package edu.chansAnder.endes;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
- * Clase para validar la seguridad de contraseñas basándose en criterios específicos.
+ * Clase encargada de la validación de seguridad de contraseñas.
+ * Proporciona métodos para verificar si una cadena cumple con los estándares
+ * de seguridad definidos para la aplicación.
+ * * @author Ander Chans
+ * @version 1.0
  */
 public class ValidadorPassword {
 
+    /** Patrón Regex: Mínimo 8 caracteres, una Mayúscula y un Número. Sin espacios. */
+    private static final String PATTERN_REGEX = "^(?=.*[0-9])(?=.*[A-Z])(?=\\S+$).{8,}$";
+
     /**
-     * Verifica si una contraseña es segura.
-     * Criterios: No nula, mínimo 8 caracteres, contiene mayúsculas y números[cite: 57].
-     * @param password La contraseña a validar.
-     * @return true si cumple los criterios, false en caso contrario.
+     * Valida si una contraseña es segura basándose en criterios específicos.
+     * Criterios:
+     * <ul>
+     * <li>No puede ser nula ni estar vacía.</li>
+     * <li>Debe tener al menos 8 caracteres.</li>
+     * <li>Debe contener al menos una letra mayúscula.</li>
+     * <li>Debe contener al menos un dígito numérico.</li>
+     * <li>No se permiten espacios en blanco.</li>
+     * </ul>
+     *
+     * @param password El String de la contraseña a validar.
+     * @return {@code true} si la contraseña cumple todos los criterios; {@code false} en caso contrario.
      */
     public boolean esSegura(String password) {
-        if (password == null) return false;
-        // Voy a utilizar la fórmula de abajo para asegurar y obligar al usuario a poner esos caracteres
-        return password.matches("^(?=.*[0-9])(?=.*[A-Z]).{8,}$");
-        /**
-         * Utilizo el Regex para facilitar el proceso de filtro en vez de un bucle que sería más tardio
-         * Pongo esto: (?=.*[0-9]) para que se utilice los numeros de 0 al 9
-         * (?=.*[A-Z]) esto para que pongamos letras desde la a hasta la z en mayúscula
-         * {8,}$") esto para que sean como mínimo 8 caracteres
-         * Y no podemos poner solo letras ni solo números
-         */
+        // Validación de nulidad y vacío para asegurar cobertura total
+        if (password == null || password.trim().isEmpty()) {
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile(PATTERN_REGEX);
+        Matcher matcher = pattern.matcher(password);
+
+        return matcher.matches();
     }
 }
