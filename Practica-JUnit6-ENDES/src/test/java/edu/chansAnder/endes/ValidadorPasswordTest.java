@@ -15,7 +15,7 @@ public class ValidadorPasswordTest {
      */
     @Test
     public void testPasswordSegura() {
-        assertTrue(validador.esSegura("Ander12345"), "Debería ser válida");
+        assertTrue(validador.esSegura("@Ander12345"));
     }
 
     /**
